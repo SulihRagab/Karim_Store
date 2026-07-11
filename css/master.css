@@ -7,6 +7,17 @@
     --transition: all 0.3s ease;
 }
 
+@font-face {
+    font-family: 'Cairo';
+    src: url('fonts/Cairo-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Cairo';
+    src: url('fonts/Cairo-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
 /* تفعيل النزول السلس للصفحة */
 html {
     scroll-behavior: smooth;
@@ -17,7 +28,6 @@ html {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Cairo', sans-serif;
-    /* إخفاء الطبقة الزرقاء عند الضغط في الموبايل */
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -26,6 +36,7 @@ button:focus, a:focus, input:focus {
 }
 
 body {
+    font-family: 'Cairo', sans-serif;
     background-color: var(--light-color);
     color: var(--dark-color);
 }
@@ -235,7 +246,7 @@ header {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
 
