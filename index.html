@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مكتبة كريم | KARIM STORE</title>
-    <link rel="stylesheet" href="css/all.min.css">
+    <!-- استدعاء الخطوط والأيقونات بشكل قياسي -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/master.css">
 </head>
 <body>
 
     <header>
         <nav class="nav-bar">
-            <div class="logo-container" style="height: 70px;">
+            <div class="logo-container">
                 <img src="imgs/logo_remove_bg.png" alt="مكتبة كريم">
             </div>
 
@@ -22,7 +23,7 @@
             </ul>
             
             <div class="nav-icons">
-                <div class="cart-icon-container" id="cart-icon">
+                <div class="cart-icon-container" id="cart-icon" role="button" aria-label="سلة المشتريات">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-badge" id="cart-count">0</span>
                 </div>
@@ -30,6 +31,7 @@
         </nav>
     </header>
 
+    <!-- سلة المشتريات -->
     <div class="cart-overlay" id="cart-overlay"></div>
     <div class="cart-sidebar" id="cart-sidebar">
         <div class="cart-header">
@@ -42,420 +44,42 @@
         <div class="cart-footer">
             <div class="cart-total">
                 <span>الإجمالي:</span>
-                <span id="total-price">0</span> <span>ج.م</span>
+                <div><span id="total-price">0</span> <span>ج.م</span></div>
             </div>
-            <button class="checkout-btn" onclick="sendOrderToWhatsApp()">
+            <button class="checkout-btn" id="whatsapp-checkout-btn">
                 <i class="fab fa-whatsapp"></i> إتمام الطلب عبر الواتساب
             </button>
         </div>
     </div>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>مرحباً بكم في <span>مكتبة كريم</span></h1>
-            <p>وجهتكم الأولى لأجود الأدوات المدرسية والمكتبية وأحدث ألعاب الأطفال التعليمية والترفيهية التي تنمي ذكاء طفلك.</p>
+            <p>وجهتكم الأولى لأجود الأدوات المدرسية والمكتبية وأحدث ألعاب الأطفال التعليمية والترفيهية.</p>
             <a href="#products" class="btn">تصفح المنتجات</a>
         </div>
     </section>
     
+    <!-- قسم المنتجات الرئيسي -->
     <section class="sections-container" id="products">
         <h2 class="section-title">منتجاتنا</h2>
         
-        <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">كل المنتجات</button>
-            <button class="filter-btn" data-filter="school">أدوات مدرسية</button>
-            <button class="filter-btn" data-filter="toys">ألعاب أطفال</button>
+        <!-- أدوات التحكم: البحث والفلترة -->
+        <div class="controls-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="ابحث عن منتج...">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">كل المنتجات</button>
+                <button class="filter-btn" data-filter="school">أدوات مدرسية</button>
+                <button class="filter-btn" data-filter="toys">ألعاب أطفال</button>
+            </div>
         </div>
 
-        <div class="products-grid">
-            <!-- جومه أشكال بحرية صغيرة -->
-            <div class="product-card school">
-                <div class="product-image">
-                    <img src="imgs/جومه_أشكال_بحرية_صغيرة.webp" alt="جومه أشكال بحرية صغيرة" class="single-product-img">
-                </div>
-                <div class="p-20">
-                    <h3>جومه أشكال بحرية صغيرة ديلي Magic Zoo</h3>
-                    <p class="price">2.5 ج.م</p>
-                    <div class="product-action">
-                        <div class="card-qty-control">
-                            <button class="card-qty-btn" onclick="updateCardQty(this, -1)">-</button>
-                            <span class="card-qty-num">1</span>
-                            <button class="card-qty-btn" onclick="updateCardQty(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(this, 'جومه أشكال بحرية صغيرة ديلي Magic Zoo', 15)">
-                            <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- جومه ديلي بيضاء سكرايب -->
-            <div class="product-card school">
-                <div class="product-image">
-                    <img src="imgs/جومه_ديلي_بيضاء_سكرايب1.webp" alt="جومه ديلي بيضاء سكرايب" class="single-product-img">
-                </div>
-                <div class="p-20">
-                    <h3>جومه ديلي بيضاء Scribe PVC Free</h3>
-                    <p class="price">15 ج.م</p>
-                    <div class="product-action">
-                        <div class="card-qty-control">
-                            <button class="card-qty-btn" onclick="updateCardQty(this, -1)">-</button>
-                            <span class="card-qty-num">1</span>
-                            <button class="card-qty-btn" onclick="updateCardQty(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(this, 'جومه ديلي بيضاء Scribe PVC Free', 10)">
-                            <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- جومه ديلي رسمة سبونج بوب -->
-            <div class="product-card school">
-                <div class="product-image">
-                    <img src="imgs/جومه_ديلي_رسمة_سبونج_بوب.jpeg" alt="جومه ديلي رسمة سبونج بوب" class="single-product-img">
-                </div>
-                <div class="p-20">
-                    <h3>جومه ديلي رسمة سبونج بوب</h3>
-                    <p class="price">15 ج.م</p>
-                    <div class="product-action">
-                        <div class="card-qty-control">
-                            <button class="card-qty-btn" onclick="updateCardQty(this, -1)">-</button>
-                            <span class="card-qty-num">1</span>
-                            <button class="card-qty-btn" onclick="updateCardQty(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(this, 'جومه ديلي رسمة سبونج بوب', 12)">
-                            <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- جومه ديلي شكل بطة -->
-            <div class="product-card school">
-                <div class="product-image">
-                    <img src="imgs/جومه_ديلي_شكل_بطة.jpg" alt="جومه ديلي شكل بطة" class="single-product-img">
-                </div>
-                <div class="p-20">
-                    <h3>جومه ديلي شكل بطة Little Singer</h3>
-                    <p class="price">20 ج.م</p>
-                    <div class="product-action">
-                        <div class="card-qty-control">
-                            <button class="card-qty-btn" onclick="updateCardQty(this, -1)">-</button>
-                            <span class="card-qty-num">1</span>
-                            <button class="card-qty-btn" onclick="updateCardQty(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(this, 'جومه ديلي شكل بطة Little Singer', 15)">
-                            <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- جومه ديلي مثلث سوداء -->
-            <div class="product-card school">
-                <div class="product-image">
-                    <img src="imgs/جومه_ديلي_مثلث_سوداء.jpg" alt="جومه ديلي مثلث سوداء" class="single-product-img">
-                </div>
-                <div class="p-20">
-                    <h3>جومه ديلي مثلث سوداء Scribe Infinite 4B</h3>
-                    <p class="price">15 ج.م</p>
-                    <div class="product-action">
-                        <div class="card-qty-control">
-                            <button class="card-qty-btn" onclick="updateCardQty(this, -1)">-</button>
-                            <span class="card-qty-num">1</span>
-                            <button class="card-qty-btn" onclick="updateCardQty(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(this, 'جومه ديلي مثلث سوداء Scribe Infinite 4B', 12)">
-                            <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- جومه سوداء ديلي امتحانات -->
-            <div class="product-card school">
-                <div class="product-image">
-                    <img src="imgs/جومه_سوداء_ديلي_امتحانات.jpg" alt="جومه سوداء ديلي امتحانات" class="single-product-img">
-                </div>
-                <div class="p-20">
-                    <h3>جومه سوداء ديلي للامتحانات Exam Premium</h3>
-                    <p class="price">15 ج.م</p>
-                    <div class="product-action">
-                        <div class="card-qty-control">
-                            <button class="card-qty-btn" onclick="updateCardQty(this, -1)">-</button>
-                            <span class="card-qty-num">1</span>
-                            <button class="card-qty-btn" onclick="updateCardQty(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(this, 'جومه سوداء ديلي للامتحانات Exam Premium', 8)">
-                            <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- جومه شكل آيس كريم -->
-            <div class="product-card school">
-                <div class="product-image">
-                    <img src="imgs/جومه_شكل_آيس_كريم.jpg" alt="جومه شكل آيس كريم" class="single-product-img">
-                </div>
-                <div class="p-20">
-                    <h3>جومه شكل آيس كريم فواكه ديلي</h3>
-                    <p class="price">25 ج.م</p>
-                    <div class="product-action">
-                        <div class="card-qty-control">
-                            <button class="card-qty-btn" onclick="updateCardQty(this, -1)">-</button>
-                            <span class="card-qty-num">1</span>
-                            <button class="card-qty-btn" onclick="updateCardQty(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(this, 'جومه شكل آيس كريم فواكه ديلي', 20)">
-                            <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- جومه فابر كاستل كلاسيك -->
-            <div class="product-card school">
-                <div class="product-image">
-                    <img src="imgs/جومه_فابر_كاستل_كلاسيك.webp" alt="جومه فابر كاستل كلاسيك" class="single-product-img">
-                </div>
-                <div class="p-20">
-                    <h3>جومه فابر كاستل كلاسيك سوداء PVC-Free</h3>
-                    <p class="price">20 ج.م</p>
-                    <div class="product-action">
-                        <div class="card-qty-control">
-                            <button class="card-qty-btn" onclick="updateCardQty(this, -1)">-</button>
-                            <span class="card-qty-num">1</span>
-                            <button class="card-qty-btn" onclick="updateCardQty(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(this, 'جومه فابر كاستل كلاسيك سوداء PVC-Free', 15)">
-                            <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- جوميت ديلي ألوان باستيل -->
-            <div class="product-card school">
-                <div class="product-image">
-                    <img src="imgs/جوميت_ديلي_ألوان_باستيل.png" alt="جوميت ديلي ألوان باستيل" class="single-product-img">
-                </div>
-                <div class="p-20">
-                    <h3>جومه ديلي ألوان باستيل هادئة</h3>
-                    <p class="price">15 ج.م</p>
-                    <div class="product-action">
-                        <div class="card-qty-control">
-                            <button class="card-qty-btn" onclick="updateCardQty(this, -1)">-</button>
-                            <span class="card-qty-num">1</span>
-                            <button class="card-qty-btn" onclick="updateCardQty(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(this, 'جومه ديلي ألوان باستيل هادئة', 10)">
-                            <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-             
-            <div class="product-card school">
-                <div class="product-image"><i class="fas fa-backpack"></i></div>
-                <div class="p-20">
-                    <h3>حقيبة مدرسية متينة</h3>
-                    <p class="price">350 ج.م</p>
-                    <div class="product-action">
-                        <div class="card-qty-control">
-                            <button class="card-qty-btn" onclick="updateCardQty(this, -1)">-</button>
-                            <span class="card-qty-num">1</span>
-                            <button class="card-qty-btn" onclick="updateCardQty(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(this, 'حقيبة مدرسية متينة', 350)">
-                            <i class="fas fa-cart-plus"></i> 
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card school">
-                <div class="product-image"><i class="fas fa-pen-nib"></i></div>
-                <div class="p-20">
-                    <h3>طقم أقلام حبر جاف</h3>
-                    <p class="price">45 ج.م</p>
-                    <div class="product-action">
-                        <div class="card-qty-control">
-                            <button class="card-qty-btn" onclick="updateCardQty(this, -1)">-</button>
-                            <span class="card-qty-num">1</span>
-                            <button class="card-qty-btn" onclick="updateCardQty(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(this, 'طقم أقلام حبر جاف', 45)">
-                            <i class="fas fa-cart-plus"></i> 
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card school">
-                <div class="product-image"><i class="fas fa-book"></i></div>
-                <div class="p-20">
-                    <h3>كشكول سلك 100 ورقة</h3>
-                    <p class="price">60 ج.م</p>
-                    <div class="product-action">
-                        <div class="card-qty-control">
-                            <button class="card-qty-btn" onclick="updateCardQty(this, -1)">-</button>
-                            <span class="card-qty-num">1</span>
-                            <button class="card-qty-btn" onclick="updateCardQty(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(this, 'كشكول سلك 100 ورقة', 60)">
-                            <i class="fas fa-cart-plus"></i> 
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- المنتج الجديد 1: زجاجة تانك (متعددة الصور - سلايدشو تلقائي ويدوي) -->
-            <div class="product-card school">
-                <div class="product-image slideshow-container">
-                    <img src="زجاجة_تانك_1.jpg" class="slide active" alt="زجاجة تانك وردي">
-                    <img src="زجاجة_تانك_2.jpg" class="slide" alt="زجاجة تانك أخضر">
-                    <img src="زجاجة_تانك_3.png" class="slide" alt="مجموعة زجاجات تانك">
-                    <img src="زجاجة_تانك.jpg" class="slide" alt="زجاجة تانك زرقاء">
-                </div>
-                <div class="p-20">
-                    <h3>زجاجة تانك معزولة (Tank Me)</h3>
-                    <p class="price">120 ج.م</p>
-                    <div class="product-action">
-                        <div class="card-qty-control">
-                            <button class="card-qty-btn" onclick="updateCardQty(this, -1)">-</button>
-                            <span class="card-qty-num">1</span>
-                            <button class="card-qty-btn" onclick="updateCardQty(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(this, 'زجاجة تانك معزولة Tank Me', 120)">
-                            <i class="fas fa-cart-plus"></i>  
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- المنتج الجديد 2: زمزمية مياه مموهة -->
-            <div class="product-card school">
-                <div class="product-image">
-                    <img src="FB_IMG_1783246983431.jpg" alt="زمزمية مياه مموهة" class="single-product-img">
-                </div>
-                <div class="p-20">
-                    <h3>زمزمية مياه مموهة عصرية</h3>
-                    <p class="price">75 ج.م</p>
-                    <div class="product-action">
-                        <div class="card-qty-control">
-                            <button class="card-qty-btn" onclick="updateCardQty(this, -1)">-</button>
-                            <span class="card-qty-num">1</span>
-                            <button class="card-qty-btn" onclick="updateCardQty(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(this, 'زمزمية مياه مموهة عصرية', 75)">
-                            <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card school">
-                <div class="product-image">
-                    <img src="imgs/جومه_أسطوانية_شكل_فواكه.jpg" alt="جومه أصوانية شكل فواكه" class="single-product-img">
-                </div>
-                <div class="p-20">
-                    <h3>جومه أصوانية شكل فواكه</h3>
-                    <p class="price">15 ج.م</p>
-                    <div class="product-action">
-                        <div class="card-qty-control">
-                            <button class="card-qty-btn" onclick="updateCardQty(this, -1)">-</button>
-                            <span class="card-qty-num">1</span>
-                            <button class="card-qty-btn" onclick="updateCardQty(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(this, 'جومه أصوانية شكل فواكه', 15)">
-                            <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- المنتج الجديد 3: كوب ستيتش بالشاليموه -->
-            <div class="product-card school">
-                <div class="product-image">
-                    <img src="photo_2025-11-01_21-24-54.jpg" alt="كوب ستيتش بالشاليموه" class="single-product-img">
-                </div>
-                <div class="p-20">
-
-                    <h3>كوب ستيتش مميز بالشاليموه</h3>
-                    <p class="price">95 ج.م</p>
-                    <div class="product-action">
-                        <div class="card-qty-control">
-                            <button class="card-qty-btn" onclick="updateCardQty(this, -1)">-</button>
-                            <span class="card-qty-num">1</span>
-                            <button class="card-qty-btn" onclick="updateCardQty(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(this, 'كوب ستيتش مميز بالشاليموه', 95)">
-                            <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card toys">
-                <div class="product-image"><i class="fas fa-cubes"></i></div>
-                <div class="p-20">
-
-                    <h3>مكعبات بناء تعليمية</h3>
-                    <p class="price">120 ج.م</p>
-                    <div class="product-action">
-                        <div class="card-qty-control">
-                            <button class="card-qty-btn" onclick="updateCardQty(this, -1)">-</button>
-                            <span class="card-qty-num">1</span>
-                            <button class="card-qty-btn" onclick="updateCardQty(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(this, 'مكعبات بناء تعليمية', 120)">
-                            <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card toys">
-                <div class="product-image">
-                    <img src="زجاجة_تانك.jpg" alt="" class="single-product-img">
-                </div>
-                <div class="p-20">
-                    <h3>بازل خشبي للأطفال</h3>
-                    <p class="price">85 ج.م</p>
-                    <div class="product-action">
-                        <div class="card-qty-control">
-                            <button class="card-qty-btn" onclick="updateCardQty(this, -1)">-</button>
-                            <span class="card-qty-num">1</span>
-                            <button class="card-qty-btn" onclick="updateCardQty(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(this, 'بازل خشبي للأطفال', 85)">
-                            <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card toys">
-                <div class="product-image"><i class="fas fa-robot"></i></div>
-                <div class="p-20">
-
-                    <h3>روبوت تفاعلي مضيء</h3>
-                    <p class="price">250 ج.م</p>
-                    <div class="product-action">
-                        <div class="card-qty-control">
-                            <button class="card-qty-btn" onclick="updateCardQty(this, -1)">-</button>
-                            <span class="card-qty-num">1</span>
-                            <button class="card-qty-btn" onclick="updateCardQty(this, 1)">+</button>
-                        </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(this, 'روبوت تفاعلي مضيء', 250)">
-                            <i class="fas fa-cart-plus"></i> 
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        <!-- شبكة المنتجات (تتولد ديناميكياً عبر الـ JS) -->
+        <div class="products-grid" id="products-grid"></div>
     </section>
 
     <footer id="contact">
@@ -467,9 +91,9 @@
             <div class="footer-section">
                 <h3>تواصل معنا</h3>
                 <p><i class="fas fa-phone"></i> تليفون: 01223086107</p>
-                <p><i class="fas fa-map-marker-alt"></i> العنوان: محافظة الإسكندرية برج العرب قرية بهيج الشارع الرئيسي مكتبة كريم</p>
+                <p><i class="fas fa-map-marker-alt"></i> العنوان: محافظة الإسكندرية - برج العرب - قرية بهيج - الشارع الرئيسي</p>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/share/1Bqtcn5PT9/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/share/1Bqtcn5PT9/" target="_blank"><i class="fab fa-facebook"></i></a>
                     <a href="https://wa.me/201223086107" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
@@ -479,195 +103,7 @@
         </div>
     </footer>
 
-    <script>
-        /* --- 1. نظام الفلترة للمنتجات --- */
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const productCards = document.querySelectorAll('.product-card');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const filterValue = btn.getAttribute('data-filter');
-
-                productCards.forEach(card => {
-                    if (filterValue === 'all' || card.classList.contains(filterValue)) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        /* --- 2. نظام السلايدشو التلقائي واليدوي للمنتجات متعددة الصور --- */
-        const slideshows = document.querySelectorAll('.slideshow-container');
-        
-        slideshows.forEach(slideshow => {
-            const slides = slideshow.querySelectorAll('.slide');
-            let currentSlide = 0;
-            
-            function nextSlide() {
-                slides[currentSlide].classList.remove('active');
-                currentSlide = (currentSlide + 1) % slides.length;
-                slides[currentSlide].classList.add('active');
-            }
-            
-            // التقليب التلقائي كل 3 ثوانٍ
-            let autoSlideInterval = setInterval(nextSlide, 3000);
-            
-            // التقليب اليدوي عند قيام الزبون بالضغط على الصورة
-            slideshow.addEventListener('click', (e) => {
-                clearInterval(autoSlideInterval); // إيقاف المؤقت مؤقتاً لمنع التداخل عند الضغط المتتالي
-                nextSlide();
-                autoSlideInterval = setInterval(nextSlide, 3000); // إعادة تشغيل التقليب التلقائي
-            });
-        });
-
-        /* --- 3. نظام سلة المشتريات والكميات --- */
-        let cart = [];
-        const cartIcon = document.getElementById('cart-icon');
-        const cartSidebar = document.getElementById('cart-sidebar');
-        const cartOverlay = document.getElementById('cart-overlay');
-        const closeCartBtn = document.getElementById('close-cart');
-        const cartItemsContainer = document.getElementById('cart-items');
-        const cartCount = document.getElementById('cart-count');
-        const totalPriceEl = document.getElementById('total-price');
-
-        // فتح وإغلاق السلة
-        cartIcon.addEventListener('click', () => {
-            cartSidebar.classList.add('active');
-            cartOverlay.classList.add('active');
-        });
-
-        const closeCart = () => {
-            cartSidebar.classList.remove('active');
-            cartOverlay.classList.remove('active');
-        };
-
-        closeCartBtn.addEventListener('click', closeCart);
-        cartOverlay.addEventListener('click', closeCart);
-
-        // تعديل الكمية قبل الإضافة (في الكارت نفسه)
-        function updateCardQty(btn, change) {
-            const qtyElement = btn.parentElement.querySelector('.card-qty-num');
-            let currentQty = parseInt(qtyElement.innerText);
-            let newQty = currentQty + change;
-            if (newQty < 1) newQty = 1; // لا يمكن أن تكون الكمية أقل من 1
-            qtyElement.innerText = newQty;
-        }
-
-        // إضافة المنتج مع الكمية المحددة
-        function addToCart(btnElement, name, price) {
-            const qtyElement = btnElement.parentElement.querySelector('.card-qty-num');
-            const qtyToAdd = parseInt(qtyElement.innerText);
-
-            const existingItemIndex = cart.findIndex(item => item.name === name);
-            
-            if (existingItemIndex > -1) {
-                cart[existingItemIndex].quantity += qtyToAdd;
-            } else {
-                cart.push({ name, price, quantity: qtyToAdd });
-            }
-            
-            // إعادة عداد الكارت إلى 1 بعد الإضافة
-            qtyElement.innerText = '1';
-
-            updateCartUI();
-            
-            cartSidebar.classList.add('active');
-            cartOverlay.classList.add('active');
-        }
-
-        // إزالة المنتج
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCartUI();
-        }
-
-        // زيادة وتقليل الكمية من داخل السلة
-        function increaseQuantity(index) {
-            cart[index].quantity += 1;
-            updateCartUI();
-        }
-
-        function decreaseQuantity(index) {
-            if (cart[index].quantity > 1) {
-                cart[index].quantity -= 1;
-            } else {
-                removeFromCart(index);
-                return;
-            }
-            updateCartUI();
-        }
-
-        // تحديث واجهة السلة
-        function updateCartUI() {
-            cartItemsContainer.innerHTML = '';
-            let total = 0;
-            let totalItems = 0;
-
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = '<p class="empty-cart-msg">السلة فارغة حالياً</p>';
-                cartCount.innerText = '0';
-                totalPriceEl.innerText = '0';
-                return;
-            }
-
-            cart.forEach((item, index) => {
-                const itemTotal = item.price * item.quantity;
-                total += itemTotal;
-                totalItems += item.quantity;
-
-                const itemEl = document.createElement('div');
-                itemEl.classList.add('cart-item');
-                itemEl.innerHTML = `
-                    <div class="item-info">
-                        <h4>${item.name}</h4>
-                        <p class="unit-price">${item.price} ج.م للقطعة</p>
-                        <p class="item-total-price">إجمالي: ${itemTotal} ج.م</p>
-                    </div>
-                    <div class="item-controls">
-                        <div class="quantity-control">
-                            <button class="qty-btn" onclick="decreaseQuantity(${index})">-</button>
-                            <span class="qty-num">${item.quantity}</span>
-                            <button class="qty-btn" onclick="increaseQuantity(${index})">+</button>
-                        </div>
-                        <i class="fas fa-trash remove-item" onclick="removeFromCart(${index})"></i>
-                    </div>
-                `;
-                cartItemsContainer.appendChild(itemEl);
-            });
-
-            cartCount.innerText = totalItems;
-            totalPriceEl.innerText = total;
-        }
-
-        // إرسال الطلب عبر الواتساب
-        function sendOrderToWhatsApp() {
-            if (cart.length === 0) {
-                alert('السلة فارغة، يرجى إضافة منتجات أولاً!');
-                return;
-            }
-
-            let message = "مرحباً مكتبة كريم، أريد طلب المنتجات التالية:\n\n";
-            let total = 0;
-
-            cart.forEach((item, index) => {
-                const itemTotal = item.price * item.quantity;
-                message += `${index + 1}. ${item.name} (الكمية: ${item.quantity}) - إجمالي: ${itemTotal} ج.م\n`;
-                total += itemTotal;
-            });
-
-            message += `\n*الإجمالي المطلوب:* ${total} ج.م\n`;
-            message += "\nبرجاء التأكيد وإخباري بتفاصيل الشحن.";
-
-            const whatsappNumber = "201223086107";
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-            
-            window.open(whatsappURL, '_blank');
-        }
-    </script>
+    <!-- فصل الجافاسكريبت في ملف خارجي أو تركه أسفل الصفحة -->
+    <script src="js/app.js"></script>
 </body>
 </html>
