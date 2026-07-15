@@ -17,13 +17,13 @@ const PRODUCTS_DATA = [
         name: "زجاجة تانك معزولة (Tank Me)", 
         price: 120, 
         category: "school", 
-        images: ["زجاجة_تانك_1.jpg", "زجاجة_تانك_2.jpg", "زجاجة_تانك_3.png", "زجاجة_تانك.jpg"] // سلايدشو
+        images: ["imgs/زجاجة_تانك_1.jpg", "imgs/زجاجة_تانك_2.jpg", "imgs/زجاجة_تانك_3.png", "imgsزجاجة_تانك.jpg"] // سلايدشو
     },
-    { id: 14, name: "زمزمية مياه مموهة عصرية", price: 75, category: "school", images: ["FB_IMG_1783246983431.jpg"] },
+    { id: 14, name: "زمزمية مياه مموهة عصرية", price: 75, category: "school", images: ["imgs/FB_IMG_1783246983431.jpg"] },
     { id: 15, name: "جومه أصوانية شكل فواكه", price: 15, category: "school", images: ["imgs/جومه_أسطوانية_شكل_فواكه.jpg"] },
-    { id: 16, name: "كوب ستيتش مميز بالشاليموه", price: 95, category: "school", images: ["photo_2025-11-01_21-24-54.jpg"] },
+    { id: 16, name: "كوب ستيتش مميز بالشاليموه", price: 95, category: "school", images: ["imgs/photo_2025-11-01_21-24-54.jpg"] },
     { id: 17, name: "مكعبات بناء تعليمية", price: 120, category: "toys", icon: "fa-cubes" },
-    { id: 18, name: "بازل خشبي للأطفال", price: 85, category: "toys", images: ["زجاجة_تانك.jpg"] },
+    { id: 18, name: "بازل خشبي للأطفال", price: 85, category: "toys", images: ["imgs/زجاجة_تانك.jpg"] },
     { id: 19, name: "روبوت تفاعلي مضيء", price: 250, category: "toys", icon: "fa-robot" }
 ];
 
