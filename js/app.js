@@ -1,30 +1,35 @@
 // 1. قاعدة بيانات المنتجات (تسهل عليك الإضافة والتعديل والحذف مستقبلاً)
 const PRODUCTS_DATA = [
-    { id: 1, name: "جومه أشكال بحرية صغيرة ديلي Magic Zoo", price: 2.5, category: "school", images: ["imgs/جومه_أشكال_بحرية_صغيرة.webp"] },
-    { id: 2, name: "جومه ديلي بيضاء Scribe PVC Free", price: 15, category: "school", images: ["imgs/جومه_ديلي_بيضاء_سكرايب1.webp"] },
-    { id: 3, name: "جومه ديلي رسمة سبونج بوب", price: 15, category: "school", images: ["imgs/جومه_ديلي_رسمة_سبونج_بوب.jpeg"] },
-    { id: 4, name: "جومه ديلي شكل بطة Little Singer", price: 20, category: "school", images: ["imgs/جومه_ديلي_شكل_بطة.jpg"] },
-    { id: 5, name: "جومه ديلي مثلث سوداء Scribe Infinite 4B", price: 15, category: "school", images: ["imgs/جومه_ديلي_مثلث_سوداء.jpg"] },
-    { id: 6, name: "جومه سوداء ديلي للامتحانات Exam Premium", price: 15, category: "school", images: ["imgs/جومه_سوداء_ديلي_امتحانات.jpg"] },
-    { id: 7, name: "جومه شكل آيس كريم فواكه ديلي", price: 25, category: "school", images: ["imgs/جومه_شكل_آيس_كريم.jpg"] },
+    { id: 1, name: "جومه أشكال بحرية صغيرة ديلي Magic Zoo", price: 2.5, category: "school", images: ["imgs/جومه_أشكال_بحرية_صغيرة.webp","imgs/جومه_أشكال_بحرية_صغيرة_1.webp"] },
+    { 
+    id: 2, 
+    name: "جومه ديلي بيضاء Scribe PVC Free",         
+    price: 15, 
+    category: "school", 
+    images: ["imgs/جومه_ديلي_بيضاء_سكرايب.webp" , "imgs/جومه_ديلي_بيضاء_سكرايب_1.webp","imgs/جومه_ديلي_بيضاء_سكرايب_2.webp"] },
+    { id: 3, name: "جومه ديلي رسمة سبونج بوب", price: 15, category: "school", images: ["imgs/جومه_ديلي_رسمة_سبونج_بوب.webp"] },
+    { id: 4, name: "جومه ديلي شكل بطة Little Singer", price: 20, category: "school", images: ["imgs/جومه_ديلي_شكل_بطة.webp","imgs/جومه_ديلي_شكل_بطة_1.webp"] },
+    { id: 5, name: "جومه ديلي مثلث سوداء Scribe Infinite 4B", price: 15, category: "school", images: ["imgs/جومه_ديلي_مثلث_سوداء.webp"] },
+    { id: 6, name: "جومه سوداء ديلي للامتحانات Exam Premium", price: 15, category: "school", images: ["imgs/جومه_سوداء_ديلي_امتحانات.webp"] },
+    { id: 7, name: "جومه شكل آيس كريم فواكه ديلي", price: 25, category: "school", images: ["imgs/جومه_شكل_آيس_كريم.webp","imgs/جومه_شكل_آيس_كريم_1.webp","imgs/جومه_شكل_آيس_كريم_2.webp"] },
     { id: 8, name: "جومه فابر كاستل كلاسيك سوداء PVC-Free", price: 20, category: "school", images: ["imgs/جومه_فابر_كاستل_كلاسيك.webp"] },
-    { id: 9, name: "جومه ديلي ألوان باستيل هادئة", price: 15, category: "school", images: ["imgs/جوميت_ديلي_ألوان_باستيل.png"] },
-    { id: 10, name: "حقيبة مدرسية متينة", price: 350, category: "school", icon: "fa-backpack" }, // دعم الأيقونات بدلاً من الصور المفقودة
-    { id: 11, name: "طقم أقلام حبر جاف", price: 45, category: "school", icon: "fa-pen-nib" },
-    { id: 12, name: "كشكول سلك 100 ورقة", price: 60, category: "school", icon: "fa-book" },
+    { id: 9, name: "جومه ديلي ألوان باستيل هادئة", price: 15, category: "school", images: ["imgs/جوميت_ديلي_ألوان_باستيل.webp" , "imgs/جوميت_ديلي_ألوان_باستيل_1.webp"] },
+    { id: 15, name: "جومه أصوانية شكل فواكه", price: 15, category: "school", images: ["imgs/جومه_أسطوانية_شكل_فواكه.webp","imgs/جومه_أسطوانية_شكل_فواكه_1.webp"] },
     { 
         id: 13, 
         name: "زجاجة تانك معزولة (Tank Me)", 
-        price: 120, 
+        price: 220, 
         category: "school", 
-        images: ["imgs/زجاجة_تانك_1.jpg", "imgs/زجاجة_تانك_2.jpg", "imgs/زجاجة_تانك_3.png", "imgsزجاجة_تانك.jpg"] // سلايدشو
+        images: ["imgs/زجاجة_تانك_1.webp", "imgs/زجاجة_تانك_2.webp", "imgs/زجاجة_تانك_3.webp", "imgs/زجاجة_تانك.webp"] // سلايدشو
     },
-    { id: 14, name: "زمزمية مياه مموهة عصرية", price: 75, category: "school", images: ["imgs/FB_IMG_1783246983431.jpg"] },
-    { id: 15, name: "جومه أصوانية شكل فواكه", price: 15, category: "school", images: ["imgs/جومه_أسطوانية_شكل_فواكه.jpg"] },
-    { id: 16, name: "كوب ستيتش مميز بالشاليموه", price: 95, category: "school", images: ["imgs/photo_2025-11-01_21-24-54.jpg"] },
-    { id: 17, name: "مكعبات بناء تعليمية", price: 120, category: "toys", icon: "fa-cubes" },
-    { id: 18, name: "بازل خشبي للأطفال", price: 85, category: "toys", images: ["imgs/زجاجة_تانك.jpg"] },
-    { id: 19, name: "روبوت تفاعلي مضيء", price: 250, category: "toys", icon: "fa-robot" }
+    { id: 14, name: "زمزمية مياه مموهة عصرية", price: 75, category: "school", images: ["imgs/زمزميه_مموهة.webp"] },
+    { id: 16, name: "كوب ستيتش مميز بالشاليموه", price: 95, category: "school", images: ["imgs/كوب_ستيتش_مميز_بالشاليموه.webp"] },
+    { id: 17, name: "زجاجة مياه أطفال ستيتش", price: 105, category: "school", images: ["imgs/زجاجة_مياه_أطفال_ستيتش.webp"] },
+    { id: 18, name: "زمزميه مياه رياضية سبيريت", price: 115, category: "school", images: ["imgs/زجاجة_مياه_رياضية_سبيريت.webp"] },
+    { id: 19, name: "زمزميه مياه شفافة لابوبو", price: 115, category: "school", images: ["imgs/زجاجة_مياه_شفافة_لابوبو.webp"] },
+    { id: 20, name: "زمزميه مياه لابوبو", price: 115, category: "school", images: ["imgs/زجاجة_مياه_لابوبو.webp", "imgs/زجاجة_مياه_لابوبو_1.webp","imgs/زجاجة_مياه_لابوبو_2.webp"] },
+    { id: 21, name: "زمزميه مياه رياضية", price: 185, category: "school", images: ["imgs/زمزمية_رياضية_بماصة.webp","imgs/زمزمية_رياضية_بماصة_1.webp","imgs/زمزمية_رياضية_بماصة_2.webp","imgs/زمزمية_رياضية_بماصة_3.webp"] },
+    
 ];
 
 // 2. حالة التطبيق (State)
