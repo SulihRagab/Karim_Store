@@ -2,11 +2,12 @@
 const PRODUCTS_DATA = [
     { id: 1, name: "جومه أشكال بحرية صغيرة ديلي Magic Zoo", price: 2.5, category: "school", images: ["imgs/جومه_أشكال_بحرية_صغيرة.webp","imgs/جومه_أشكال_بحرية_صغيرة_1.webp"] },
     { 
-    id: 2, 
-    name: "جومه ديلي بيضاء Scribe PVC Free",         
-    price: 15, 
-    category: "school", 
-    images: ["imgs/جومه_ديلي_بيضاء_سكرايب.webp" , "imgs/جومه_ديلي_بيضاء_سكرايب_1.webp","imgs/جومه_ديلي_بيضاء_سكرايب_2.webp"] },
+        id: 2, 
+        name: "جومه ديلي بيضاء Scribe PVC Free",         
+        price: 15, 
+        category: "school", 
+        images: ["imgs/جومه_ديلي_بيضاء_سكرايب.webp" , "imgs/جومه_ديلي_بيضاء_سكرايب_1.webp","imgs/جومه_ديلي_بيضاء_سكرايب_2.webp"] 
+    },
     { id: 3, name: "جومه ديلي رسمة سبونج بوب", price: 15, category: "school", images: ["imgs/جومه_ديلي_رسمة_سبونج_بوب.webp"] },
     { id: 4, name: "جومه ديلي شكل بطة Little Singer", price: 20, category: "school", images: ["imgs/جومه_ديلي_شكل_بطة.webp","imgs/جومه_ديلي_شكل_بطة_1.webp"] },
     { id: 5, name: "جومه ديلي مثلث سوداء Scribe Infinite 4B", price: 15, category: "school", images: ["imgs/جومه_ديلي_مثلث_سوداء.webp"] },
@@ -28,8 +29,114 @@ const PRODUCTS_DATA = [
     { id: 18, name: "زمزميه مياه رياضية سبيريت", price: 115, category: "school", images: ["imgs/زجاجة_مياه_رياضية_سبيريت.webp"] },
     { id: 19, name: "زمزميه مياه شفافة لابوبو", price: 115, category: "school", images: ["imgs/زجاجة_مياه_شفافة_لابوبو.webp"] },
     { id: 20, name: "زمزميه مياه لابوبو", price: 115, category: "school", images: ["imgs/زجاجة_مياه_لابوبو.webp", "imgs/زجاجة_مياه_لابوبو_1.webp","imgs/زجاجة_مياه_لابوبو_2.webp"] },
-    { id: 21, name: "زمزميه مياه رياضية", price: 185, category: "school", images: ["imgs/زمزمية_رياضية_بماصة.webp","imgs/زمزمية_رياضية_بماصة_1.webp","imgs/زمزمية_رياضية_بماصة_2.webp","imgs/زمزمية_رياضية_بماصة_3.webp"] },
-    
+    {
+        id: 21, 
+        name: "زمزميه مياه رياضية", 
+        price: 185, category: "school", 
+        images: ["imgs/زمزمية_رياضية_بماصة.webp","imgs/زمزمية_رياضية_بماصة_1.webp","imgs/زمزمية_رياضية_بماصة_2.webp","imgs/زمزمية_رياضية_بماصة_3.webp"] 
+    },
+    {
+        id: 22, 
+        name:  "Aqua زمزمية مياه", 
+        price: 35, category: "school", 
+        images: ["imgs/زمزمية_مياه_aqua.webp","imgs/زمزمية_مياه_aqua_1.webp","imgs/زمزمية_مياه_aqua_2.webp","imgs/زمزمية_مياه_aqua_3.webp","imgs/زمزمية_مياه_aqua_4.webp"] 
+    },
+    {
+        id: 23, 
+        name:  "Carbon زمزميه مياه", 
+        price: 35,
+        category: "school",
+        images: [
+            "imgs/زمزميه_مياه_carbon.webp",
+            "imgs/زمزميه_مياه_carbon_1.webp",
+            "imgs/زمزميه_مياه_carbon_2.webp",
+            "imgs/زمزميه_مياه_carbon_3.webp",
+            "imgs/زمزميه_مياه_carbon_4.webp",
+            "imgs/زمزميه_مياه_carbon_5.webp"
+        ]
+    },
+    {
+        id: 24, 
+        name:  "Joy طقم", 
+        price: 100,
+        category: "school",
+        images: [
+            "imgs/طقم_joy.webp",
+            "imgs/طقم_joy_1.webp",
+            "imgs/طقم_joy_2.webp",
+            "imgs/طقم_joy_3.webp",
+            "imgs/طقم_joy_4.webp",
+            "imgs/طقم_joy_5.webp"
+        ]
+    },
+    {
+        id: 25, 
+        name:  "Happy Meal لانش بوكس", 
+        price: 100,
+        category: "school",
+        images: [
+            "imgs/لانش_بوكس_happy_meal.webp",
+            "imgs/لانش_بوكس_happy_meal_1.webp",
+            "imgs/لانش_بوكس_happy_meal_2.webp",
+            "imgs/لانش_بوكس_happy_meal_3.webp",
+            "imgs/لانش_بوكس_happy_meal_4.webp",
+            "imgs/لانش_بوكس_happy_meal_6.webp"
+        ]
+    },
+    {
+        id: 26, 
+        name:  "Master لانش بوكس", 
+        price: 105,
+        category: "school",
+        images: [
+            "imgs/لانش_بوكس_master.webp",
+            "imgs/لانش_بوكس_master_1.webp",
+            "imgs/لانش_بوكس_master_2.webp",
+            "imgs/لانش_بوكس_master_3.webp",
+            "imgs/لانش_بوكس_master_4.webp"
+        ]
+    },
+    {
+        id: 27, 
+        name:  "Mega  لانش بوكس", 
+        price: 100,
+        category: "school",
+        images: [
+            "imgs/لانش_بوكس_mega.webp",
+            "imgs/لانش_بوكس_mega_1.webp",
+            "imgs/لانش_بوكس_mega_4.webp",
+            "imgs/لانش_بوكس_mega_5.webp",
+            "imgs/لانش_بوكس_mega_6.webp"
+        ]
+    },
+    {
+        id: 28, 
+        name:  "Boom لانش بوكس وزمزميه", 
+        price: 100,
+        category: "school",
+        images: [
+            "imgs/لانش_بوكس_وزمزميه_boom.webp",
+            "imgs/لانش_بوكس_وزمزميه_boom_1.webp",
+            "imgs/لانش_بوكس_وزمزميه_boom_2.webp",
+            "imgs/لانش_بوكس_وزمزميه_boom_3.webp",
+            "imgs/لانش_بوكس_وزمزميه_boom_4.webp",
+            "imgs/لانش_بوكس_وزمزميه_boom_5.webp"
+        ]
+    },
+    {
+        id: 29, 
+        name:  "Mini Mega لانش بوكس وزمزميه", 
+        price: 55,
+        category: "school",
+        images: [
+            "imgs/لانش_بوكس_وزمزميه_mini_mega.jpg",
+            "imgs/لانش_بوكس_وزمزميه_mini_mega_1.jpg",
+            "imgs/لانش_بوكس_وزمزميه_mini_mega_2.jpg",
+            "imgs/لانش_بوكس_وزمزميه_mini_mega_3.jpg",
+            "imgs/لانش_بوكس_وزمزميه_mini_mega_4.jpg",
+            "imgs/لانش_بوكس_وزمزميه_mini_mega_5.jpg"
+        ]
+    },
 ];
 
 // 2. حالة التطبيق (State)
@@ -50,7 +157,7 @@ const searchInput = document.getElementById('search-input');
 const filterBtns = document.querySelectorAll('.filter-btn');
 const whatsappCheckoutBtn = document.getElementById('whatsapp-checkout-btn');
 
-// 4. دالة عرض المنتجات بناءً على الفلترة والبحث
+// 4. دالة عرض المنتجات بناءً على الفلترة والبحث (تعديل طفيف لإضافة عناصر التحكم بالسلايدشو)
 function renderProducts() {
     productsGrid.innerHTML = '';
     
@@ -73,9 +180,25 @@ function renderProducts() {
         let imageHTML = '';
         if (product.images && product.images.length > 1) {
             imageHTML = `<div class="product-image slideshow-container" data-id="${product.id}">`;
+            
+            // الصور
             product.images.forEach((img, idx) => {
                 imageHTML += `<img src="${img}" class="slide ${idx === 0 ? 'active' : ''}" alt="${product.name}">`;
             });
+            
+            // أسهم التقليب
+            imageHTML += `
+                <button class="slideshow-arrow prev-arrow" aria-label="الصورة السابقة"><i class="fas fa-chevron-right"></i></button>
+                <button class="slideshow-arrow next-arrow" aria-label="الصورة التالية"><i class="fas fa-chevron-left"></i></button>
+            `;
+
+            // دوائر المؤشر السفلية (Dots)
+            imageHTML += `<div class="slideshow-dots">`;
+            product.images.forEach((_, idx) => {
+                imageHTML += `<span class="dot ${idx === 0 ? 'active' : ''}" data-index="${idx}"></span>`;
+            });
+            imageHTML += `</div>`;
+            
             imageHTML += `</div>`;
         } else if (product.images && product.images.length === 1) {
             imageHTML = `<div class="product-image"><img src="${product.images[0]}" alt="${product.name}" class="single-product-img" loading="lazy"></div>`;
@@ -220,27 +343,103 @@ cartIcon.addEventListener('click', openCart);
 closeCartBtn.addEventListener('click', closeCart);
 cartOverlay.addEventListener('click', closeCart);
 
-// 8. محرك السلايدشو للمنتجات متعددة الصور
+// 8. محرك السلايدشو اليدوي المطور (أسهم، نقاط، وسحب لليمين واليسار)
 function initSlideshows() {
     const slideshows = document.querySelectorAll('.slideshow-container');
+    
     slideshows.forEach(slideshow => {
         const slides = slideshow.querySelectorAll('.slide');
-        let currentSlide = 0;
-        let interval;
+        const dots = slideshow.querySelectorAll('.dot');
+        const prevArrow = slideshow.querySelector('.prev-arrow');
+        const nextArrow = slideshow.querySelector('.next-arrow');
+        let currentIndex = 0;
 
-        function showNext() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
+        // دالة الانتقال لصورة محددة
+        function goToSlide(index) {
+            // معالجة الحدود الدائرية للسلايدشو
+            if (index >= slides.length) index = 0;
+            if (index < 0) index = slides.length - 1;
+
+            // إزالة الكلاس النشط من الصورة والنقطة الحالية
+            slides[currentIndex].classList.remove('active');
+            dots[currentIndex].classList.remove('active');
+
+            // تفعيل العنصر الجديد
+            currentIndex = index;
+            slides[currentIndex].classList.add('active');
+            dots[currentIndex].classList.add('active');
         }
 
-        interval = setInterval(showNext, 3000);
-
-        slideshow.addEventListener('click', () => {
-            clearInterval(interval);
-            showNext();
-            interval = setInterval(showNext, 3000);
+        // 1. تشغيل الأسهم
+        prevArrow.addEventListener('click', (e) => {
+            e.stopPropagation(); // منع انتقال الحدث لفتح تفاصيل أو سلة
+            goToSlide(currentIndex - 1);
         });
+
+        nextArrow.addEventListener('click', (e) => {
+            e.stopPropagation();
+            goToSlide(currentIndex + 1);
+        });
+
+        // 2. تشغيل دوائر المؤشر السفلية (Dots)
+        dots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const targetIndex = parseInt(dot.getAttribute('data-index'));
+                goToSlide(targetIndex);
+            });
+        });
+
+        // 3. التقليب عن طريق السحب (Swipe / Drag) للموبايل والكمبيوتر
+        let startX = 0;
+        let isDragging = false;
+
+        // أحداث اللمس (الهواتف)
+        slideshow.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+        }, { passive: true });
+
+        slideshow.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            let endX = e.changedTouches[0].clientX;
+            handleSwipe(startX, endX);
+            isDragging = false;
+        }, { passive: true });
+
+        // أحداث الماوس (الكمبيوتر)
+        slideshow.addEventListener('mousedown', (e) => {
+            startX = e.clientX;
+            isDragging = true;
+            e.preventDefault(); // يمنع سحب الصورة الافتراضي للمتصفح
+        });
+
+        slideshow.addEventListener('mouseup', (e) => {
+            if (!isDragging) return;
+            let endX = e.clientX;
+            handleSwipe(startX, endX);
+            isDragging = false;
+        });
+
+        slideshow.addEventListener('mouseleave', () => {
+            isDragging = false;
+        });
+
+        // معالجة اتجاه السحب (مع مراعاة اتجاه RTL العربي لليمين واليسار)
+        function handleSwipe(start, end) {
+            const threshold = 50; // الحد الأدنى للمسافة بالبكسل لاعتبارها سحبة ناجحة
+            const diff = start - end;
+
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0) {
+                    // سحب لليسار -> الانتقال للصورة التالية
+                    goToSlide(currentIndex + 1);
+                } else {
+                    // سحب لليمين -> الانتقال للصورة السابقة
+                    goToSlide(currentIndex - 1);
+                }
+            }
+        }
     });
 }
 

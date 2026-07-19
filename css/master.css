@@ -62,7 +62,7 @@ header {
     z-index: 1000;
 }
 
-.nav-bar { 
+.nav-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -141,52 +141,202 @@ header {
 /* ==========================================================================
    4. HERO SECTION
    ========================================================================== */
+/* ==========================================================================
+   4. HERO SECTION (مطور واحترافي)
+   ========================================================================== */
 .hero {
-    background: linear-gradient(135deg, rgba(11, 83, 81, 0.95), rgba(0, 168, 150, 0.85)),
-                url(../imgs/baner.jpeg) no-repeat center center/cover;
+    position: relative;
+    background: url('../imgs/baner.webp') no-repeat center center/cover;
     height: calc(100vh - 80px);
+    min-height: 550px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
     padding: 0 20px;
+    overflow: hidden;
+}
+
+/* تراكب داكن متدرج لإبراز النصوص بوضوح */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(11, 83, 81, 0.85) 0%, rgba(0, 168, 150, 0.6) 100%);
+    z-index: 1;
+}
+
+/* كارت المحتوى بتأثير زجاجي راقي */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 40px 30px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* شارة تمهيدية علوية */
+.hero-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background-color: var(--gold-color);
+    color: var(--dark-color);
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+    animation: pulse 2s infinite;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-size: 3.2rem;
+    margin-bottom: 15px;
+    line-height: 1.3;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .hero-content h1 span {
     color: var(--gold-color);
+    position: relative;
+    display: inline-block;
 }
 
 .hero-content p {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
+    font-size: 1.25rem;
+    margin-bottom: 35px;
+    line-height: 1.8;
+    color: #f0f5f5;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: var(--gold-color);
-    color: white;
+/* أزرار البانر التفاعلية */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+    padding: 14px 32px;
+    font-size: 1.1rem;
     font-weight: 700;
-    border-radius: 30px;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     transition: var(--transition);
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
-.btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+.btn-primary {
+    background-color: var(--gold-color);
+    color: var(--dark-color) !important;
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
 }
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(212, 175, 55, 0.6);
+    background-color: #ffd03b;
+}
+
+.btn-secondary-outline {
+    background-color: transparent;
+    color: white !important;
+    border: 2px solid white;
+}
+
+.btn-secondary-outline:hover {
+    background-color: white;
+    color: var(--primary-color) !important;
+    transform: translateY(-3px);
+}
+
+/* عناصر هندسية جمالية بالخلفية */
+.hero-shapes .shape {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,175,55,0.2) 0%, rgba(212,175,55,0) 70%);
+    z-index: 1;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    right: -50px;
+}
+
+.shape-2 {
+    width: 250px;
+    height: 250px;
+    bottom: -50px;
+    left: -50px;
+}
+
+/* ==========================================================================
+   تأثيرات الحركة الـ Animations
+   ========================================================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* التوافق مع الشاشات الصغيرة لجعل البانر مريحاً للعين */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 80px 20px;
+    }
+    .hero-content {
+        padding: 30px 20px;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 
 /* ==========================================================================
    5. CONTROLS (SEARCH & FILTER)
@@ -346,7 +496,7 @@ header {
 
 .slideshow-container .slide.active {
     opacity: 1;
-    position: relative;
+    position: relative;    
     display: block;
 }
 
@@ -772,4 +922,93 @@ footer {
     .hero-content p {
         font-size: 1.1rem;
     }
+}
+
+/* ==========================================================================
+   تعديلات وحلول السلايدشو اليدوي الجديد
+   ========================================================================== */
+.slideshow-container {
+    position: relative;
+    user-select: none; /* يمنع تحديد وتظليل العناصر أثناء السحب */
+    touch-action: pan-y; /* يسمح بالتمرير العمودي للمتصفح ويحمي السحب الأفقي */
+}
+
+/* لمنع سحب الصور الافتراضي في المتصفحات أثناء استخدام الماوس */
+.slideshow-container img {
+    pointer-events: none; 
+}
+
+/* أسهم السلايدشو */
+.slideshow-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(11, 83, 81, 0.7); /* لون رئيسي شفاف */
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+    opacity: 0; /* مخفية افتراضياً وتظهر عند تمرير الماوس */
+}
+
+.product-card:hover .slideshow-arrow {
+    opacity: 1; /* إظهار الأسهم عند تمرير الماوس على كارت المنتج */
+}
+
+/* توافق مريح للأجهزة التي تعمل باللمس (إظهار الأسهم دائماً على الموبايل) */
+@media (max-width: 768px) {
+    .slideshow-arrow {
+        opacity: 1;
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.slideshow-arrow:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-arrow {
+    right: 10px; /* السهم الأيمن للرجوع للخلف في لغة RTL */
+}
+
+.next-arrow {
+    left: 10px; /* السهم الأيسر للتقدم للأمام */
+}
+
+/* دوائر المؤشر السفلية (Dots) */
+.slideshow-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px 10px;
+    border-radius: 20px;
+    backdrop-filter: blur(3px);
+}
+
+.slideshow-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.slideshow-dots .dot.active {
+    background-color: var(--gold-color); /* لون الدائرة النشطة ذهبي متناسق مع هويتك */
+    transform: scale(1.25);
 }
